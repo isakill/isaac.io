@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Amor</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: purple;
+            text-align: center;
+            color: white;
+            padding: 50px;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 15px;
+            display: inline-block;
+        }
+        h1 {
+            font-size: 3rem;
+        }
+        p {
+            font-size: 1.5rem;
+        }
+        .btn {
+            background: red;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: darkred;
+        }
+        .options {
+            margin-top: 20px;
+        }
+        .option-btn {
+            background: pink;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin: 5px;
+            transition: 0.3s;
+        }
+        .option-btn:hover {
+            background: hotpink;
+        }
+        #message {
+            font-size: 1.5rem;
+            margin-top: 20px;
+            display: none;
+        }
+        .gif-container {
+            margin-top: 20px;
+        }
+        #response-gif {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Para Ti, Mi ñiña ❤️</h1>
+        <p>Te amo 3 MILLONES💖.</p>
+        <div class="gif-container">
+            <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExaTcwZDB3bzN0djByNzQ0ajlzajVwNzJsYWdqb2RkeTdmcHYyNDNxeSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/tpVKvAabWt3G5csMkT/giphy.gif" alt="Amor" width="300">
+        </div>
+        <button class="btn" onclick="preguntarValentin()">¿Quieres ser mi Valentín? 💘</button>
+        <div id="respuesta" class="options" style="display: none;">
+            <button class="option-btn" onclick="responder(true)">Shí</button>
+            <button class="option-btn" onclick="responder(false)">Ño 😢</button>
+        </div>
+        <p id="message"></p>
+        <div class="gif-container">
+            <img id="response-gif" src="" alt="Respuesta" width="300">
+        </div>
+    </div>
+    <script>
+        function preguntarValentin() {
+            document.getElementById("respuesta").style.display = "block";
+        }
+        function responder(acepta) {
+            let message = document.getElementById("message");
+            let gif = document.getElementById("response-gif");
+            if (acepta) {
+                message.innerHTML = "TE AMO, TE AMO, TE AMOOO. VAMOS A SER MUY FELICES 💖";
+                message.style.color = "lightgreen";
+                gif.src = "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcG1tdXRtMzk5dW9wczhvdW85emcwYmR2a2d2Z2cybnYxcGE5cWg2ZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/c76IJLufpNwSULPk77/giphy.gif"; // GIF de felicidad
+            } else {
+                message.innerHTML = ":(💔";
+                message.style.color = "red";
+                gif.src = "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExeXR3MTN4dDQ3Z2o1M3JsYjRrOG50M2poZGV0ZDRlNXNraGlndmU3YyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/98MaHVwJOmWMz4cz1K/giphy.gif"; // GIF triste
+            }
+            message.style.display = "block";
+            gif.style.display = "block";
+        }
+    </script>
+</body>
+</html>
